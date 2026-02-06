@@ -51,7 +51,8 @@ flask-task-manager/
 ### 1️⃣ Clone Repository
 
 ```
-git clone https://github.com/yourusername/flask-task-manager.git
+git clone https://github.com/Madhukar2006
+/flask-task-manager.git
 ```
 
 ### 2️⃣ Navigate to Project
