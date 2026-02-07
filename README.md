@@ -30,7 +30,7 @@ This project is beginner-friendly and designed as a mini project suitable for le
 ## 📂 Project Structure
 
 ```
-flask-task-manager/
+Flask-Mini-Project/
 │
 ├── app.py
 ├── templates/
@@ -41,7 +41,9 @@ flask-task-manager/
 ├── static/
 │   └── style.css
 │
-└── requirements.txt
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ---
@@ -50,27 +52,34 @@ flask-task-manager/
 
 ### 1️⃣ Clone Repository
 
-```
-git clone https://github.com/Madhukar2006
-/flask-task-manager.git
+```bash
+git clone https://github.com/Madhukar2006/Flask-Mini-Project.git
 ```
 
 ### 2️⃣ Navigate to Project
 
-```
-cd flask-task-manager
+```bash
+cd Flask-Mini-Project
 ```
 
 ### 3️⃣ Install Dependencies
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 ### 4️⃣ Run Application
 
-```
+```bash
 python app.py
+```
+
+The application will be available at `http://localhost:5000`
+
+To run in production mode (debug disabled):
+```bash
+FLASK_DEBUG=False python app.py
+```
 
 ---
 

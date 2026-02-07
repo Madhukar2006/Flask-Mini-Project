@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Task - Flask Task Manager{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1 class="mb-4">
+            <i class="fas fa-edit"></i> Edit Task
+        </h1>
+        
+        <div class="card shadow">
+            <div class="card-header bg-warning">
+                <h5 class="mb-0">Update Task Details</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('edit_task', task_id=task.id) }}">
+                    <div class="mb-3">
+                        <label for="task_name" class="form-label">Task Name *</label>
+                        <input type="text" class="form-control" id="task_name" name="task_name" 
+                               value="{{ task.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="task_description" class="form-label">Task Description</label>
+                        <textarea class="form-control" id="task_description" name="task_description" 
+                                  rows="3">{{ task.description }}</textarea>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-warning">
+                            <i class="fas fa-save"></i> Update Task
+                        </button>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
