@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
 
 app = Flask(__name__)
 
@@ -68,6 +69,7 @@ def delete_task(task_id):
 
 
 if __name__ == '__main__':
-    # Note: debug=True and host='0.0.0.0' are for development only
+    # Note: Debug mode should only be enabled in development
     # In production, use a proper WSGI server (e.g., Gunicorn) and disable debug mode
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    debug_mode = os.environ.get('FLASK_DEBUG', 'True') == 'True'
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)
