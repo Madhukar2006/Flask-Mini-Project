@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # In-memory storage for tasks (simple list-based CRUD)
+# Note: Using global variables for demonstration purposes only.
+# Production applications should use proper database storage (SQLite, PostgreSQL, etc.)
 tasks = []
 task_id_counter = 1
 
@@ -43,8 +45,14 @@ def edit_task(task_id):
     
     if request.method == 'POST':
         # Update task with new data
-        task['name'] = request.form.get('task_name')
-        task['description'] = request.form.get('task_description', '')
+        task_name = request.form.get('task_name')
+        task_description = request.form.get('task_description', '')
+        
+        # Validate that task name is not empty
+        if task_name:
+            task['name'] = task_name
+            task['description'] = task_description
+        
         return redirect(url_for('index'))
     
     # GET request - show edit form
@@ -60,4 +68,6 @@ def delete_task(task_id):
 
 
 if __name__ == '__main__':
+    # Note: debug=True and host='0.0.0.0' are for development only
+    # In production, use a proper WSGI server (e.g., Gunicorn) and disable debug mode
     app.run(debug=True, host='0.0.0.0', port=5000)
