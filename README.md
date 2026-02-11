@@ -7,7 +7,7 @@ This project is beginner-friendly and designed as a mini project suitable for le
 ---
 
 ## ⭐ Features
-
+  
 * Flask routing and URL handling
 * Form handling using GET and POST methods
 * Create, Read, Update, Delete (CRUD) operations
