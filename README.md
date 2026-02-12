@@ -5,7 +5,7 @@ A simple Flask web application built to demonstrate backend development fundamen
 This project is beginner-friendly and designed as a mini project suitable for learning Flask and showcasing backend skills in interviews.
 
 ---
-
+  
 ## ⭐ Features
   
 * Flask routing and URL handling
